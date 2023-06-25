@@ -21,13 +21,13 @@ import tech.jhipster.config.JHipsterConstants;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ LiquibaseProperties.class, ApplicationProperties.class })
-public class PccwAppApp {
+public class PccwApp {
 
-    private static final Logger log = LoggerFactory.getLogger(PccwAppApp.class);
+    private static final Logger log = LoggerFactory.getLogger(PccwApp.class);
 
     private final Environment env;
 
-    public PccwAppApp(Environment env) {
+    public PccwApp(Environment env) {
         this.env = env;
     }
 
@@ -65,7 +65,7 @@ public class PccwAppApp {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(PccwAppApp.class);
+        SpringApplication app = new SpringApplication(PccwApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);

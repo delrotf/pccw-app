@@ -11,6 +11,7 @@ import { LoginService } from 'app/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
 import { EntityNavbarItems } from 'app/entities/entity-navbar-items';
 import NavbarItem from './navbar-item.model';
+import { Md5 } from 'ts-md5';
 
 @Component({
   standalone: true,
@@ -26,6 +27,7 @@ export default class NavbarComponent implements OnInit {
   version = '';
   account: Account | null = null;
   entitiesNavbarItems: NavbarItem[] = [];
+  avatarUrl: string | null = null;
 
   constructor(
     private loginService: LoginService,
@@ -46,6 +48,8 @@ export default class NavbarComponent implements OnInit {
     });
 
     this.accountService.getAuthenticationState().subscribe(account => {
+      this.avatarUrl = this.getAvatarURL(account);
+
       this.account = account;
     });
   }
@@ -66,5 +70,25 @@ export default class NavbarComponent implements OnInit {
 
   toggleNavbar(): void {
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  getAvatarURL(account: Account | null) {
+    const imageUrl = account?.imageUrl;
+
+    if (imageUrl) {
+      return imageUrl;
+    }
+
+    const email = account?.email?.trim().toLowerCase();
+
+    if (email) {
+      // Create an MD5 hash of the final string
+      const hash = Md5.hashStr(email);
+
+      // Grab the actual image URL
+      return `https://www.gravatar.com/avatar/${hash}`;
+    }
+
+    return null;
   }
 }

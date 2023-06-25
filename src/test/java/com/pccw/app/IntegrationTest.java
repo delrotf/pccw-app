@@ -1,6 +1,5 @@
 package com.pccw.app;
 
-import com.pccw.app.PccwAppApp;
 import com.pccw.app.config.AsyncSyncConfiguration;
 import com.pccw.app.config.EmbeddedSQL;
 import java.lang.annotation.ElementType;
@@ -15,7 +14,7 @@ import org.springframework.test.annotation.DirtiesContext;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = { PccwAppApp.class, AsyncSyncConfiguration.class })
+@SpringBootTest(classes = { PccwApp.class, AsyncSyncConfiguration.class })
 @EmbeddedSQL
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public @interface IntegrationTest {

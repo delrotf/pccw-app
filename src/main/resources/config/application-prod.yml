@@ -42,10 +42,16 @@ spring:
     contexts: prod
     url: jdbc:postgresql://localhost:5432/pccw-app
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: smtp.gmail.com
+    port: 587
+    username: appmailerserv@gmail.com
+    password: ylwjdtlzrrekzijh
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/pccw-app
     username: pccw-app
@@ -103,7 +109,7 @@ jhipster:
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    base-url: http://my-server-url-to-change # Modify according to your server's URL
+    base-url: http://localhost:8080 # Modify according to your server's URL
   logging:
     use-json-format: false # By default, logs are not in Json format
     logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration

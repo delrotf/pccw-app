@@ -26,7 +26,7 @@
         <td>
           <button
             (click)="changeLevel(logger.name, 'TRACE')"
-            [ngClass]="logger.level === 'TRACE' ? 'btn-primary' : 'btn-light'"
+            [ngClass]="logger.level === 'TRACE' ? 'btn-outline-primary' : 'btn-light'"
             class="btn btn-sm"
           >
             TRACE
@@ -34,7 +34,7 @@
 
           <button
             (click)="changeLevel(logger.name, 'DEBUG')"
-            [ngClass]="logger.level === 'DEBUG' ? 'btn-success' : 'btn-light'"
+            [ngClass]="logger.level === 'DEBUG' ? 'btn-outline-success' : 'btn-light'"
             class="btn btn-sm"
           >
             DEBUG
@@ -42,7 +42,7 @@
 
           <button
             (click)="changeLevel(logger.name, 'INFO')"
-            [ngClass]="logger.level === 'INFO' ? 'btn-info' : 'btn-light'"
+            [ngClass]="logger.level === 'INFO' ? 'btn-outline-info' : 'btn-light'"
             class="btn btn-sm"
           >
             INFO
@@ -50,7 +50,7 @@
 
           <button
             (click)="changeLevel(logger.name, 'WARN')"
-            [ngClass]="logger.level === 'WARN' ? 'btn-warning' : 'btn-light'"
+            [ngClass]="logger.level === 'WARN' ? 'btn-outline-warning' : 'btn-light'"
             class="btn btn-sm"
           >
             WARN
@@ -58,7 +58,7 @@
 
           <button
             (click)="changeLevel(logger.name, 'ERROR')"
-            [ngClass]="logger.level === 'ERROR' ? 'btn-danger' : 'btn-light'"
+            [ngClass]="logger.level === 'ERROR' ? 'btn-outline-danger' : 'btn-light'"
             class="btn btn-sm"
           >
             ERROR
@@ -66,7 +66,7 @@
 
           <button
             (click)="changeLevel(logger.name, 'OFF')"
-            [ngClass]="logger.level === 'OFF' ? 'btn-secondary' : 'btn-light'"
+            [ngClass]="logger.level === 'OFF' ? 'btn-outline-secondary' : 'btn-light'"
             class="btn btn-sm"
           >
             OFF

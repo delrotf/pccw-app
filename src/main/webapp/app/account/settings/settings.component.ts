@@ -16,6 +16,8 @@ const initialAccount: Account = {} as Account;
 export default class SettingsComponent implements OnInit {
   success = false;
 
+  urlRegEx = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?'; // fragment locater';
+
   settingsForm = new FormGroup({
     firstName: new FormControl(initialAccount.firstName, {
       nonNullable: true,
@@ -33,7 +35,10 @@ export default class SettingsComponent implements OnInit {
 
     activated: new FormControl(initialAccount.activated, { nonNullable: true }),
     authorities: new FormControl(initialAccount.authorities, { nonNullable: true }),
-    imageUrl: new FormControl(initialAccount.imageUrl, { nonNullable: true }),
+    // imageUrl: new FormControl(initialAccount.imageUrl, { nonNullable: true }),
+    imageUrl: new FormControl(initialAccount.imageUrl, {
+      validators: [Validators.pattern(this.urlRegEx)],
+    }),
     login: new FormControl(initialAccount.login, { nonNullable: true }),
   });
 

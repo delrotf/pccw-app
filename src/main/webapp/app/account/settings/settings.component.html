@@ -100,6 +100,27 @@
           </div>
         </div>
 
+        <div class="mb-3">
+          <label class="form-label" for="imageUrl">Avatar Url <small>(default is your gravatar, if you have.)</small></label>
+          <input
+            type="url"
+            class="form-control"
+            id="imageUrl"
+            name="imageUrl"
+            placeholder="Your avatar"
+            formControlName="imageUrl"
+            data-cy="imageUrl"
+          />
+
+          <div
+            *ngIf="settingsForm.get('imageUrl')!.invalid && (settingsForm.get('imageUrl')!.dirty || settingsForm.get('imageUrl')!.touched)"
+          >
+            <small class="form-text text-danger" *ngIf="settingsForm.get('imageUrl')?.errors?.pattern">
+              Please enter the url for the image.asfsdasdf asfas
+            </small>
+          </div>
+        </div>
+
         <button type="submit" [disabled]="settingsForm.invalid" class="btn btn-primary" data-cy="submit">Save</button>
       </form>
     </div>
