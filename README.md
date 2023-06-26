@@ -20,15 +20,15 @@ This application supports JDK 17 to 19.
 
 ## Running the script
 
-I have created a script to run in a single command.
+I have created a script to run in a single command. After cloning this project to your local, go to the project directory and run:
 
-On Windows run:
+On Windows:
 
 ```
 runapp.bat
 ```
 
-For non Windows run:
+For non Windows:
 
 ```
 runapp.sh
