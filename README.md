@@ -2,6 +2,8 @@
 
 This application allows users to register to the application, and edit their data. When registering, an activation email will be sent so please use a valid email that you have access. The user would then click the activation link to activate the account and be able to login.
 
+GMAIL smtp was used for mailing. All the emails sent to the users can be seen in the gmail itself. Please ask me for the username/password for that gmail.
+
 ## Unauthenticated Users:
 
 These users are only allowed to see the login page and register.
