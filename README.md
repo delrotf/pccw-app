@@ -40,9 +40,10 @@ runapp.sh
 
 Access the application using this url:
 
-```
-http://localhost:8080/
-```
+
+[http://localhost:8080/](http://localhost:8080/)
+
+
 ## Login as admin
 
 You may login as an admin using
